@@ -24,8 +24,8 @@ Defined media conditions will always be easier to simulate in silico, as compare
 4. Add missing transport reactions for metabolites that have both intracellular and extracellular metabolites
 5. Simulate growth - Gapfill if necessary  
 
-### Automated Version
-1. Create CSV file organized like the example below for each media of interest
+### [Automated Version](https://github.com/lrd3uu/gardnerella_vaginalis/blob/main/insilico_media_gapfill.py)
+1. Create CSV file with [compound id](https://github.com/jotech/gapseq/blob/master/dat/nutrients.tsv), name, and maxFlux
   ```
   compounds,name,maxFlux
   cpd00001,H2O,100
@@ -36,6 +36,7 @@ Defined media conditions will always be easier to simulate in silico, as compare
 ```
 ./gapseq fill -m ~/vaginal_microbiome/models/gvaginalis.RDS -c ~/vaginal_microbiome/models/gvaginalis-rxnWeights.RDS -g ~/vaginal_microbiome/models/gvaginalis-rxnXgenes.RDS -n ~/vaginal_microbiome/media/*
 ```
+3. Use media change function to simulate growth under media conditions of interest
 ### Determining Minimal Media requirements
 ```
 gapseq medium -m ~/vaginal_microbiome/models/gvaginalis.RDS -p myb71-all-Pathways.tbl

@@ -32,7 +32,7 @@ Defined media conditions will always be easier to simulate in silico, as compare
   cpd00007,O2,10
   cpd00009,Phosphate,100
   ```
-2. Gapfill model so that it can grow on medias of interest
+2. Gapfill model so that it can grow on known media - we are gapfilling to NYCIII since it is the recommended media by ATCC
 ```
 ./gapseq fill -m model.RDS -c model-rxnWeights.RDS -g model-rxnXgenes.RDS -n dat/media/media_of_interest.csv
 ```

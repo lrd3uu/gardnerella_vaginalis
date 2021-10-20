@@ -7,12 +7,12 @@ By constructing a _G. vaginalis_ metabolic model we aim to understand essential 
 Build metabolic model using _Gardnerella vaginalis_ [genome sequence](https://genomes.atcc.org/genomes?text=gardnerella) and [gapseq](https://gapseq.readthedocs.io/en/latest/usage/basics.html)
 
 ```
-./gapseq draft -r toy/myb71-all-Reactions.tbl -t toy/myb71-Transporter.tbl -p toy/myb71-all-Pathways.tbl -c ~/vaginal_microbiome/Gvaginalis_ATCC_14018.fasta
+./gapseq draft -r toy/myb71-all-Reactions.tbl -t toy/myb71-Transporter.tbl -p toy/myb71-all-Pathways.tbl -c ~/vaginal_microbiome/models/Gvaginalis_ATCC_14018.fasta
 ```
 
 Gapfilling done via gapseq for a functional model.
 ```
-./gapseq fill -m toy/myb71-draft.RDS -c toy/myb71-rxnWeights.RDS -g toy/myb71-rxnXgenes.RDS -n dat/media/TSBmed.csv
+./gapseq fill -m /sfs/lustre/bahamut/scratch/lrd3uu/vaginal_microbiome/models/gvaginalis.RDS -c /sfs/lustre/bahamut/scratch/lrd3uu/vaginal_microbiome/models/gvaginalis-rxnWeights.RDS -g /sfs/lustre/bahamut/scratch/lrd3uu/vaginal_microbiome/models/gvaginalis-rxnXgenes.RDS -n dat/media/TSBmed.csv
 ```
 ## [_in Silico_ Media](https://github.com/lrd3uu/gardnerella_vaginalis/blob/main/insilico_media.py)
 Defined media conditions will always be easier to simulate in silico, as compared to enriched media. I have included both enriched, KSFM & NYCIII, and defined media ([SVM](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC265277/)) conditions within the provided code. [NYCIII media](https://www.atcc.org/~/media/FA8074C3B4B9450899EE2542D6AD7116.ashx) is the suggested growing conditions for _G. vaginalis_ and KSFM is the enriched media used for [vaginal epithelial cell](https://www.atcc.org/products/crl-2616) growth - a cell line later used for co-culture system to simulate host-pathogen interactions _in vitro_ 

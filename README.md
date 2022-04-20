@@ -20,20 +20,7 @@ Defined media conditions will always be easier to simulate in silico, as compare
 4. Add missing transport reactions for metabolites that have both intracellular and extracellular metabolites
 5. Simulate growth - Gapfill if necessary  
 
-### [Automated Version](https://github.com/lrd3uu/gardnerella_vaginalis/blob/main/insilico_media_gapfill.py)
-1. Create CSV file with [compound id](https://github.com/jotech/gapseq/blob/master/dat/nutrients.tsv), name, and maxFlux
-  ```
-  compounds,name,maxFlux
-  cpd00001,H2O,100
-  cpd00007,O2,10
-  cpd00009,Phosphate,100
-  ```
-2. Gapfill model so that it can grow on known media - we are gapfilling for NYCIII since it is the recommended media by ATCC, and synthetic vaginal media
-```
-./gapseq fill -m model.RDS -c model-rxnWeights.RDS -g model-rxnXgenes.RDS -n dat/media/media_of_interest.csv
 ```
 3. Use media change function to simulate growth under media conditions of interest
 ### Determining Minimal Media requirements
-```
-gapseq medium -m model.RDS -p myb71-all-Pathways.tbl
 ```
